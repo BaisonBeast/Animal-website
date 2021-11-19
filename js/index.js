@@ -26,7 +26,12 @@ $(document).ready(function(){
 
   });
 
-  // smooth scrolling 
+  // Setting the item value
+  $(".item").click(function(){
+    $(".item_count").html(function(i, val){return +val+1});
+  });
+
+  // smooth scrolling
 
   $('a[href*="#"]').on('click',function(e){
 

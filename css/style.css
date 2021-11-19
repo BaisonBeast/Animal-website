@@ -14,6 +14,14 @@
     transition: .3s cubic-bezier(.38,1.15,.7,1.12);
 }
 
+img:hover{
+  transform: scale(1.10);
+}
+
+.btn:hover{
+  transform: scale(1.05);
+}
+
 *::selection{
     background:#333;
     color:var(--yellow);
@@ -38,6 +46,14 @@ html::-webkit-scrollbar-thumb{
 
 section{
     padding:1rem 5%;
+}
+
+.item_count{
+  position: absolute;
+  font-size: 15px;
+  color: white;
+  right: 26px;
+  top: 23px;
 }
 
 .btn{
@@ -417,7 +433,7 @@ header.sticky{
     padding:2rem 10%;
     text-align: center;
 }
- 
+
 .contact form .inputBox{
     display: flex;
     flex-wrap: wrap;

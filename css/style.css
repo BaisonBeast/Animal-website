@@ -500,7 +500,101 @@ header.sticky{
 }
 
 
+/* Cart */
 
+.cart_box{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  left: 0;
+  top: 0;
+  align-items: center;
+  justify-content: center;
+  background: rbga(0, 0, 0, 0.8)
+  z-index: 99999;
+  transition: 0.3s linear;
+  transform: scale(0);
+}
+.cart_box.active{
+  transform: scale(1);
+}
+.cart_box > .cart{
+  position: relative;
+  background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+  height: 70%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cart_box > .cart > i{
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #f00;
+  padding: 10px 15px;
+  color: white;
+  cursor: pointer;
+}
+.cart_box > .cart > i:hover{
+  background: #f00000a5;
+}
+.cart_box > .cart > h1{
+  position: relative;
+  margin-top: 2%;
+  font-size: 3.5rem;
+  color: #297F87;
+  font-family: sans-serif;
+}
+.cart> p{
+  position: absolute;
+  top: 380px;
+  right: auto;
+  left: auto;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.cart_table{
+        position: absolute;
+        background-color: white;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-collapse: collapse;
+        width: 800px;
+        height: 200px;
+        border: 1px solid #bdc3c7;
+        box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
+        font-size: 15px;
+}
+.cart_table> tr{
+        transition: all .2s ease-in;
+        cursor: pointer;
+}
+.cart_table > th, td{
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+}
+.cart_table > tr:hover {
+        background-color: #f5f5f5;
+        transform: scale(1.02);
+        box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
+}
+.cart_table >tr >th >a{
+  font-family: sans-serif;
+  background-color: #2C272E;
+  color: white;
+  padding: 4px 6px 4px 6px;
+  border: 2px solid white;
+  border-radius: 5px;
+  letter-spacing: .1rem;
+}
+.cart_table >tr >th >a:hover{
+  background-color: #105652;
+}
 
 
 
@@ -593,7 +687,6 @@ header.sticky{
     .contact form .inputBox input{
         width:100%;
     }
-
 }
 
 @media (max-width:400px){
@@ -625,6 +718,10 @@ header.sticky{
 
     .offer .box-container .box .content span{
         font-size: 1.5rem;
+    }
+    .item_count{
+      top: 18px;
+      right: 22px;
     }
 
 }

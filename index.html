@@ -7,9 +7,23 @@
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="css/style.css">
+
+    <script>
+		function Delete(e){
+			let items = [];
+			JSON.parse(localStorage.getItem('items')).map(data=>{
+				if(data.id != e.parentElement.parentElement.children[0].textContent){
+					items.push(data);
+				}
+			});
+			localStorage.setItem('items',JSON.stringify(items));
+			window.location.reload();
+		};
+	</script>
 
 </head>
 <body>
@@ -118,7 +132,7 @@
                 </div>
                 <h3>tasty pets food</h3>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia, facilis?</p>
-                <a href="#" class=" item btn">add to cart</a>
+                <a href="#" title="add to cart" class=" item btn">add to cart</a>
             </div>
         </div>
 
@@ -135,7 +149,7 @@
                 </div>
                 <h3>tasty pets food</h3>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia, facilis?</p>
-                <a href="#" class=" item btn">add to cart</a>
+                <a href="#" title="add to cart" class=" item btn">add to cart</a>
             </div>
         </div>
 
@@ -171,9 +185,9 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                 </div>
-                <h3>healthy pets food</h3>
-                <div class="price"> ₹400 <span>₹900</span> </div>
-                <a href="#" class="item btn">add to cart</a>
+                <h3>Dogs chicken</h3>
+                <div class="price"> ₹<em>400</em> ₹<span>900</span> </div>
+                <a href="#" title="add to cart" class="item btn">add to cart</a>
             </div>
         </div>
 
@@ -187,9 +201,9 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                 </div>
-                <h3>healthy pets food</h3>
-                <div class="price"> ₹450 <span>₹780</span> </div>
-                <a href="#" class="item btn">add to cart</a>
+                <h3>Cats variety food</h3>
+                <div class="price"> ₹<em>450</em> ₹<span>780</span> </div>
+                <a href="#" title="add to cart" class="item btn">add to cart</a>
             </div>
         </div>
 
@@ -203,9 +217,9 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                 </div>
-                <h3>healthy pets food</h3>
-                <div class="price"> ₹345 <span>₹500</span> </div>
-                <a href="#" class="item btn">add to cart</a>
+                <h3>Cats food</h3>
+                <div class="price"> ₹<em>345</em> ₹<span>500</span> </div>
+                <a href="#" title="add to cart" class="item btn">add to cart</a>
             </div>
         </div>
 
@@ -219,9 +233,9 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                 </div>
-                <h3>healthy pets food</h3>
-                <div class="price"> ₹599 <span>₹899</span> </div>
-                <a href="#" class="item btn">add to cart</a>
+                <h3>Small fog food</h3>
+                <div class="price"> ₹<em>599</em> ₹<span>899</span> </div>
+                <a href="#" title="add to cart" class="item btn">add to cart</a>
             </div>
         </div>
 
@@ -235,9 +249,9 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                 </div>
-                <h3>healthy pets food</h3>
-                <div class="price"> ₹999 <span>₹1999</span> </div>
-                <a href="#" class="item btn">add to cart</a>
+                <h3>Bird cage</h3>
+                <div class="price"> ₹<em>999</em> ₹<span>1999</span> </div>
+                <a href="#" title="add to cart" class="item btn">add to cart</a>
             </div>
         </div>
 
@@ -251,9 +265,9 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                 </div>
-                <h3>healthy pets food</h3>
-                <div class="price"> ₹599 <span>₹799</span> </div>
-                <a href="#" class="item btn">add to cart</a>
+                <h3>Bunny food</h3>
+                <div class="price">₹<em>599</em> ₹<span>799</span> </div>
+                <a href="#" title="add to cart" class="item btn">add to cart</a>
             </div>
         </div>
 
@@ -311,7 +325,7 @@
             <input type="text" placeholder="subject">
         </div>
 
-        <textarea name="" id="" cols="30" rows="10" placeholder="message"></textarea>
+        <textarea  cols="30" rows="10" placeholder="message"></textarea>
 
         <input type="submit" value="send message" class="btn">
 
@@ -348,8 +362,16 @@
 </section>
 
 
-
-
+<!-- Cart toal section -->
+<div class="cart_box">
+  <div class="cart">
+    <i class="far fa-times-circle"></i>
+    <h1>Cart</h1>
+    <table class="cart_table">
+    </table>
+    <p>Subtotal: <span class="total">0</span></p>
+  </div>
+</div>
 
 
 
